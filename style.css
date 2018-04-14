@@ -1,10 +1,10 @@
-#cover-layer{
+.container-fluid{
     position: absolute;
     z-index: 0; 
     left:0;
     height: 100%; 
     width: 100%; 
-    background: no-repeat url('http://www.rainymood.com//i/b/75.jpg') ;
+    background: no-repeat  ;
     background-size: cover;
     background-position: center;
     opacity: .8
