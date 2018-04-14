@@ -20,16 +20,18 @@
     <title>Local Weather</title>
 </head>
 
-<body>
+<body class="position-absolute w-100 h-100">
     <div class="container-fluid text-light position-absolute" style="height:100%;">
-        <div id="cover-layer"></div>
+        <!-- Header -->
         <div class="row mb-5" style="background: rgba(226, 93, 106,.5)">
             <div class="col-12">
                 <h1 class="display-4 text-center" style="font-family: 'Gugi', cursive;">
                     <i class="fab fa-cloudversify fa-lg"></i> Local Weather</h1>
             </div>
         </div>
-        <div class="row justify-content-center align-items-center flex-wrap-reverse pt-5 pb-5" style = "background:rgba(0,0,0,.5);" >
+        <!-- Main Row -->
+        <div class="row justify-content-center align-items-center flex-wrap-reverse pt-5 pb-5" style="background:rgba(0,0,0,.5);">
+            <!-- Location -->
             <div class="col-md-2 lead">
                 <div class="row justify-content-center">
                     <div id="country" class="col-4 text-right">US</div>
@@ -37,10 +39,19 @@
                 </div>
                 <p id="date" class="text-center">4/11/2018</p>
             </div>
+            <!-- Temperature -->
             <div class="col-md-3 text-center">
-                <h1 id="temp" class="display-4">20.40
-                    <span class="scale">°C</span>
-                </h1>
+                <div class="row justify-content-center text-center">
+                    <h1 class="display-4">
+                        <span id="temp">20.40</span>
+                        <span id="main-scale" class="scale">°C</span>
+                    </h1>
+                    <h5>
+                        <a href="#">
+                        <span id="scale-badge" class="badge badge-primary">°F</span>
+                        </a>
+                    </h5>
+                </div>
                 <div class="row justify-content-center text-center">
                     <div class="col-6">
                         <div class="row justify-content-center">
@@ -64,14 +75,17 @@
                     </div>
                 </div>
             </div>
+            <!-- Icon -->
             <div class="col-md-2 text-center">
                 <img id="icon" class="w-50 h-50 text-light" src="img/rain.svg" alt="icon">
             </div>
+            <!-- Description -->
             <div class="col-md-2 text-center">
                 <h5 id="main" class="">Rain</h5>
                 <p id="description" class="lead">light Rain</p>
             </div>
         </div>
+        <!-- Second Row -->
         <div class="row justify-content-center mt-5  text-center ">
             <div class="col-6 rounded" style="background:rgba(0, 0, 0,.5)">
                 <div class="row justify-content-center align-items-center">

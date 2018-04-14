@@ -31,7 +31,7 @@ function displayWeather(w) {
   $("#main").text(w.weather[0].main)
   $("#description").text(w.weather[0].description)
   $("#date").text(d.toLocaleDateString())
-  $("#temp").text(Math.round(w.main.temp) + " °C")
+  $("#temp").text(Math.round(w.main.temp))
   $("#maxTemp").text(w.main.temp_max)
   $("#minTemp").text(w.main.temp_min)
   $('#humidity').text(w.main.humidity + " %")
@@ -55,4 +55,29 @@ function changeImage(w) {
     $("#icon").attr("src", 'img/sun.svg');
     $(".container-fluid").css("background-image", "url('/img/sunny-day-wallpaper-1.jpg')")
   }
+}
+
+// Change Scale
+
+$("#scale-badge").on("click", function (e) {
+  let targetScale = $(this).text();
+  let currentScale =  $("#main-scale").text();
+  let temp = parseInt($("#temp").text())
+  let maxTemp = parseInt($("#maxTemp").text())
+  let minTemp = parseInt($("#minTemp").text())
+
+  $(this).text(currentScale);
+  $(".scale").text(targetScale);
+  $("#temp").text(convertTemp(targetScale, temp));
+  $("#maxTemp").text(convertTemp(targetScale, temp));
+  $("#minTemp").text(convertTemp(targetScale, temp));
+
+return false;
+});
+
+function convertTemp(targetScale, temp){
+  if(targetScale.includes('F'))
+    return Math.round(temp * 1.8 + 32);
+  else
+    return Math.round((temp-32)/1.8);
 }
