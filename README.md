@@ -1,2 +1,4 @@
 # local-weather
-show local weather based on the geolocation API on browsers
+Locale weather based on browser geolocation API, jQuery, RESTful weather API
+
+DEMO : https://weatherky.surge.sh/
